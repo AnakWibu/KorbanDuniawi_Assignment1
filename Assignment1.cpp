@@ -72,7 +72,7 @@ int main(void)
     printList(b);
  
     struct Node* head = SortedMerge(a, b);
-    printf("Sesudah di sorting : ");
+    printf("Sesudah Merge : ");
     printList(head);
  
     return 0;
