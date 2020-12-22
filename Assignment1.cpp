@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
  
-// Data Structure to store a linked list node
 struct Node
 {
     int value;
     struct Node* next;
 };
  
-// Helper function to print given linked list
 void printList(struct Node* head)
 {
     struct Node* curr = head;
@@ -21,7 +19,7 @@ void printList(struct Node* head)
     printf("NULL\n");
 }
  
-// Helper function to insert new Node in the beginning of the linked list
+
 void push(struct Node** head, int value)
 {
     struct Node* newNode = (Node*)malloc(sizeof(Node));
@@ -32,7 +30,6 @@ void push(struct Node** head, int value)
 
 struct Node* SortedMerge(struct Node* a, struct Node* b)
 {
-    // Base cases
     if (a == NULL)
         return b;
  
@@ -41,7 +38,6 @@ struct Node* SortedMerge(struct Node* a, struct Node* b)
  
     struct Node* result = NULL;
  
-    // Pick either a or b, and recur
     if (a->value <= b->value)
     {
         result = a;
@@ -56,7 +52,6 @@ struct Node* SortedMerge(struct Node* a, struct Node* b)
     return result;
 }
  
-// main method
 int main(void)
 {
     int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
@@ -70,14 +65,14 @@ int main(void)
     {
         push(&b, arr[i]);
     }
-    printf("First List  :  ");
+    printf("Linked List a  :  ");
     printList(a);
  
-    printf("Second List : ");
+    printf("Linked List b : ");
     printList(b);
  
     struct Node* head = SortedMerge(a, b);
-    printf("After Merge : ");
+    printf("Sesudah di sorting : ");
     printList(head);
  
     return 0;
